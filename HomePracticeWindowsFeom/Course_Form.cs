@@ -21,7 +21,9 @@ namespace HomePracticeWindowsFeom
 
         public Course_Form()
         {
+
             InitializeComponent();
+
         }
 
         private void btnWrite_Click(object sender, EventArgs e)
@@ -29,7 +31,8 @@ namespace HomePracticeWindowsFeom
             
             try
             {
-                 fs = new FileStream(@"D:\SnQBatch\Test1.txt", FileMode.Create, FileAccess.Write);
+
+                fs = new FileStream(@"D:\SnQBatch\Test1.txt", FileMode.Create, FileAccess.Write);
 
                 BinaryWriter bw = new BinaryWriter(fs);
                 bw.Write(Convert.ToInt32(txtID.Text));
@@ -37,6 +40,7 @@ namespace HomePracticeWindowsFeom
                 bw.Write(Convert.ToInt32(txtFees.Text));
                 bw.Close();
                 MessageBox.Show("Done");
+                
 
             }
             catch(Exception ex)
@@ -70,6 +74,13 @@ namespace HomePracticeWindowsFeom
             {
                 fs.Close();
             }
+        }
+
+        private void btnColour_Click(object sender, EventArgs e)
+        {
+            txtID.Clear();
+            txtName.Clear();
+            txtFees.Clear();
         }
     }
 }
